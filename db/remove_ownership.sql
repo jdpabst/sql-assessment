@@ -1,2 +1,3 @@
-DELETE FROM vehicles
-WHERE ownerId = $1
+UPDATE vehicles
+SET ownerId = null
+WHERE id = $1

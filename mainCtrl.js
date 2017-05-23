@@ -70,8 +70,7 @@ module.exports= {
             let userId = req.params.userId;
 
             let id = userId;
-            
-            
+
             db.change_user([vehicleId, id], function(err, result){
                 res.status(200).send(result)
             })
@@ -79,9 +78,8 @@ module.exports= {
 
         removeOwnershipOfUser: function(req, res, next){
             let id = req.params.vehicleId;
-            let userId = req.params.userId;
 
-            db.remove_ownership([vehicles.id, users.id], function(err, result){
+            db.remove_ownership([id], function(err, result){
                 res.status(200).send(result)
             })
         },
@@ -95,11 +93,5 @@ module.exports= {
                 res.status(200).send(result);
             })
         }
-
-
-
-
-
-
 
 }
